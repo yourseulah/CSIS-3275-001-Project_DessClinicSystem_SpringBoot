@@ -1,0 +1,40 @@
+package com.example.dcs;
+
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
+
+import com.example.dcs.model.Doctor;
+import com.example.dcs.model.Doctor.Gender;
+import com.example.dcs.model.DoctorRepository;
+
+@SpringBootApplication
+public class DessClinicSystemApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DessClinicSystemApplication.class, args);
+	}
+
+	@Bean
+	ApplicationRunner init(DoctorRepository doctorRepository) {
+		return args -> {
+			
+		}
+	}
+	
+
+	
+	private void loadData(DoctorRepository doctorRepository) {
+		ArrayList<Doctor> doctors = new ArrayList<>();
+	
+		doctorRepository.save(
+				new Doctor(1978-02-07, "Becky", "Smith", 
+						Gender.Female, "gynecologist", 8));
+		
+	}
+}

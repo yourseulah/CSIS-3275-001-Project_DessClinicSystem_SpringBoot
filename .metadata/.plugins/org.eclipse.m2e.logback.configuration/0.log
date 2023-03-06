@@ -1,0 +1,192 @@
+2023-03-05 20:11:59,661 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-03-05 20:19:19,148 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-03-05 20:21:32,587 [Worker-18: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:DessClinicSystem:0.0.1-SNAPSHOT @ D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\pom.xml.
+2023-03-05 20:21:33,447 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DessClinicSystem/src/main/java
+2023-03-05 20:21:33,447 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /DessClinicSystem/src/main/resources
+2023-03-05 20:21:33,453 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /DessClinicSystem/src/main/resources
+2023-03-05 20:21:33,458 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DessClinicSystem/src/test/java
+2023-03-05 20:21:34,203 [Worker-18: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2023-03-05 20:21:34,207 [Worker-18: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2023-03-05 20:21:34,470 [Worker-18: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:DessClinicSystem:0.0.1-SNAPSHOT @ D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\pom.xml.
+2023-03-05 20:21:34,826 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DessClinicSystem/src/main/java
+2023-03-05 20:21:34,826 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /DessClinicSystem/src/main/resources
+2023-03-05 20:21:34,828 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /DessClinicSystem/src/main/resources
+2023-03-05 20:21:34,828 [Worker-18: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DessClinicSystem/src/test/java
+2023-03-05 20:21:35,230 [Worker-18: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2023-03-05 20:21:35,697 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 20:21:35,705 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:21:35,708 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 20:22:43,640 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 20:22:43,649 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:22:43,652 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 20:23:10,401 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 20:23:10,404 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:23:10,405 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 20:23:22,114 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 20:23:22,125 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:23:22,127 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 20:37:29,627 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 20:37:29,643 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:37:29,646 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 20:37:30,721 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:37:30,721 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 20:37:30,724 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:07:41,005 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:07:41,014 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:07:41,016 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:08:05,205 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:08:05,208 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:08:05,210 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:08:10,697 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:08:10,701 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:08:10,704 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:08:42,244 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:08:42,248 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:08:42,250 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:08:54,906 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:08:54,909 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:08:54,911 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:10:12,801 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:10:12,804 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:10:12,806 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 21:40:48,811 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 21:40:48,820 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 21:40:48,823 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:05:17,039 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:05:17,043 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:05:17,045 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:05:20,180 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:05:20,187 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:05:20,189 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:06:59,571 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:06:59,583 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:06:59,585 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:08:35,995 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:08:35,997 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:08:35,999 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:08:46,903 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:08:46,906 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:08:46,908 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:11:51,122 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:11:51,124 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:11:51,126 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:13:55,170 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:13:55,178 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:13:55,180 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:14:12,989 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:14:12,993 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:14:12,995 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:24:42,197 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:24:42,200 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:24:42,202 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:27:24,819 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:27:24,821 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:27:24,823 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:27:33,862 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:27:33,864 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:27:33,865 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:27:41,958 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:27:41,961 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:27:41,963 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:28:01,010 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:28:01,013 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:28:01,015 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:28:15,540 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:28:15,544 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:28:15,546 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:28:59,045 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:28:59,047 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:28:59,048 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:29:06,324 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2023-03-05 22:29:18,288 [Worker-68: Launching DessClinicSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem
+2023-03-05 22:29:18,291 [Worker-68: Launching DessClinicSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B -Dstyle.color=always spring-boot:run
+2023-03-05 22:29:47,024 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:29:47,027 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:29:47,028 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:29:56,760 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:29:56,764 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:29:56,765 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:30:35,348 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:30:35,350 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:30:35,352 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:32:28,536 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:32:28,542 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:32:28,544 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:32:29,556 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:32:29,563 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:32:29,565 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:35:44,107 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:35:44,110 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:35:44,113 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:40:04,063 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:40:04,065 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:40:04,067 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:44:43,583 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:44:43,587 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:44:43,590 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:45:18,620 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:45:18,623 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:45:18,626 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:49:37,368 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:49:37,371 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:49:37,374 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:55:06,853 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:55:06,858 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:55:06,860 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 22:58:20,619 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 22:58:20,623 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 22:58:20,625 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:01:43,613 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:01:43,617 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:01:43,619 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:01:56,431 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:01:56,439 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:01:56,441 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:02:17,550 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:02:17,557 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:02:17,559 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:03:12,572 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:03:12,575 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:03:12,579 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:05:33,431 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:05:33,435 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:05:33,437 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:10:42,061 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:10:42,064 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:10:42,067 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:11:25,710 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:11:25,713 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:11:25,715 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:14:29,905 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:14:29,909 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:14:29,910 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:15:19,884 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:15:19,886 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:15:19,887 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:16:03,584 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:16:03,588 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:16:03,590 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:16:35,673 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:16:35,675 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:16:35,677 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:16:44,450 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:16:44,452 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:16:44,454 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:24:09,685 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:24:09,689 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:24:09,692 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:24:14,204 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:24:14,207 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:24:14,208 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:24:26,640 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:24:26,643 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:24:26,645 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:40:58,931 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:40:58,934 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:40:58,936 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:44:28,617 [Worker-101: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:44:28,622 [Worker-101: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:44:28,624 [Worker-101: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
+2023-03-05 23:50:04,835 [Worker-97: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-05 23:50:04,848 [Worker-97: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-05 23:50:04,850 [Worker-97: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\myWorkSpace\Winter 2023\CSIS 3275 001 Project_DessClinicSystem\DessClinicSystem\src\test\resources
