@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.dcs.model.Invoice;
 import com.example.dcs.model.InvoiceRepository;
 
-@CrossOrigin(origins = "http://localhost:8081") // used for vue
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
 public class InvoiceController {
@@ -40,80 +40,41 @@ public class InvoiceController {
 		}
 	}
 	
-//	//To get a doctor by id
-//	@GetMapping("/doctors/{dId}")
-//	public ResponseEntity<Doctor> getDoctorById(
-//			@PathVariable("dId") long dId) {
-//		Optional<Doctor> courseData = doctorRepository.findById(dId);
-//		
-//		if(courseData.isPresent()) {
-//			return new ResponseEntity<>(courseData.get(), HttpStatus.OK);
-//		} else {
-//			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//		}
-//	}
-//	
-//	//To Create a new doctor record
-//	@PostMapping("/doctors")
-//	public ResponseEntity<Doctor> createDoctor(
-//			@RequestBody Doctor doctor) {
-//		try {
-//			Doctor _doctor = doctorRepository.save(new 
-//					Doctor(doctor.getdDoB(), doctor.getdFName(), doctor.getdLName(),
-//							doctor.getGender(), doctor.getMajor(), doctor.getdYoP()));
-//			return new ResponseEntity<>(_doctor, HttpStatus.CREATED);
-//		} catch(Exception e) {
-//			return new ResponseEntity<>(null, 
-//					HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
-//	
-//	//To update a doctor
-//	@PutMapping("/doctors/{dId}")
-//	public ResponseEntity<Doctor> updateDoctor(
-//			@PathVariable("dId")long dId, @RequestBody Doctor doctor) {
-//		
-//		Optional<Doctor> doctorData = doctorRepository.findById(dId);
-//		
-//		if(doctorData.isPresent()) {
-//			Doctor _doctor = doctorData.get();
-//			_doctor.setdDoB(doctor.getdDoB());
-//			_doctor.setdFName(doctor.getdFName());
-//			_doctor.setdLName(doctor.getdLName());
-//			_doctor.setGender(doctor.getGender());
-//			_doctor.setMajor(doctor.getMajor());
-//			_doctor.setdYoP(doctor.getdYoP());
-//			return new ResponseEntity<>(
-//					doctorRepository.save(_doctor), HttpStatus.OK);
-//		} else {
-//			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//		}
-//	}
-//	
-//	//To delete a course
-//	@DeleteMapping("/doctors/{dId}")
-//	public ResponseEntity<HttpStatus> deleteDoctor(
-//			@PathVariable("dId") long dId) {
-//		try {
-//			doctorRepository.deleteById(dId);
-//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//		} catch(Exception e) {
-//			return new ResponseEntity<>(null, 
-//					HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
-//	
-//	//To delete all doctors' records
-//	@DeleteMapping("/doctors")
-//	public ResponseEntity<HttpStatus> deleteAllDoctors() {
-//		try {
-//			doctorRepository.deleteAll();
-//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//		} catch(Exception e) {
-//			return new ResponseEntity<>(null, 
-//					HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
+	@GetMapping("/invoices/{id}")
+	public ResponseEntity<Invoice> getInvoiceById(@PathVariable("id") long id) {
+		try {
+			Optional<Invoice> invoice = invoiceRepository.findById(id);
+			
+			if(invoice.isPresent()) {
+				return new ResponseEntity<>(invoice.get(), HttpStatus.OK);
+			} else {
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}	
+	}
 	
+	@PutMapping("/invoices/{id}")
+	public ResponseEntity<Invoice> updateInvoice(
+			@PathVariable("id")long id, @RequestBody Invoice invoice) {
+		
+		Optional<Invoice> invoiceFound = invoiceRepository.findById(id);
+		
+		if(invoiceFound.isPresent()) {
+			Invoice newInvoice = invoiceFound.get();
+			newInvoice.setAmount(invoice.getAmount());
+			newInvoice.setInsuranceCompany(invoice.getInsuranceCompany());
+			newInvoice.setMethod(invoice.getMethod());
+			newInvoice.setPaymentDate(invoice.getPaymentDate());
+			newInvoice.setStatus(invoice.getStatus());
+			newInvoice.setYearsOfPractice(invoice.getYearsOfPractice());
+			
+			return new ResponseEntity<>(invoiceRepository.save(newInvoice), HttpStatus.OK);
+
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}	
 	
 }

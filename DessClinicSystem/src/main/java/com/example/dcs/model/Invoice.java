@@ -57,12 +57,8 @@ public class Invoice {
 		this.yearsOfPractice = yearsOfPractice;
 	}
 
-	public long getdId() {
+	public long getId() {
 		return id;
-	}
-
-	public void setdId(long id) {
-		this.id = id;
 	}
 
 	public LocalDate getPaymentDate() {
