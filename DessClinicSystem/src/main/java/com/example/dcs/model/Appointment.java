@@ -23,7 +23,7 @@ public class Appointment {
 	private long appointmentId;
 	
 	@Column(name = "visit_date")
-	private LocalDate visitDate;
+	private String visitDate;
 	
 	@Column(name = "visit_time")
 	private LocalTime visitTime;
@@ -55,7 +55,7 @@ public class Appointment {
 	
 	public Appointment() {}
 
-	public Appointment(LocalDate visitDate, LocalTime visitTime, String quickNote) {
+	public Appointment(String visitDate, LocalTime visitTime, String quickNote) {
 		super();
 		this.visitDate = visitDate;
 		this.visitTime = visitTime;
@@ -75,12 +75,12 @@ public class Appointment {
 	}
 
 
-	public LocalDate getVisitDate() {
+	public String getVisitDate() {
 		return visitDate;
 	}
 
 
-	public void setVisitDate(LocalDate visitDate) {
+	public void setVisitDate(String visitDate) {
 		this.visitDate = visitDate;
 	}
 

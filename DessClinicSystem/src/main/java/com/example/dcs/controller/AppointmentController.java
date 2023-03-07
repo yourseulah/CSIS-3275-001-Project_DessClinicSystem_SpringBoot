@@ -53,12 +53,15 @@ public class AppointmentController {
 			}
 		}
 		
-		/*
-		// To create a new appointment with the doctor -- -- (student - registers - course) - (patient-appointment-doctor)
-		@PostMapping("/registerappointment")
+		// runs when we see a create appointment booking page
+		// @GetMapping("/appointments/{aId}")
+		
+		
+		// To create a new appointment with the doctor -- -- (student - registers - course) - (patient-appointment-invoice)
+		/*@PostMapping("/registerappointment/{pid}")
 		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt ) {
 			try {
-				//Optional<Patient> st = studentRepository.findById(appt.getStudent().getId());
+				//Optional<Patient> patientData = patientRepository.findById(pid);
 				//Optional<Section> sec = sectionRepository.findById(appt.getSection().getId());
 				//Appointment newAppt = appointmentRepository.save(new Registration(st.get(), sec.get()));
 				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
@@ -66,7 +69,7 @@ public class AppointmentController {
 				e.printStackTrace();
 				return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
-		}
-	*/
+		}*/
+	
 
 }
