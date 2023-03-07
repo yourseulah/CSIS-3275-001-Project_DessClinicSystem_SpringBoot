@@ -85,6 +85,44 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Create invoice",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Conten",
+								"value": "application/json",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"paymentDate\": \"2022-03-06\",\n        \"method\": \"VISA\",\n        \"amount\": 500000.0,\n        \"status\": \"Paid\",\n        \"insuranceCompany\": \"GCG Canada\",\n        \"yearsOfPractice\": 10\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/invoices",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"invoices"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
