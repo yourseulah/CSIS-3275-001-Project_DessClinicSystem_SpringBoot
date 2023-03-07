@@ -16,6 +16,9 @@ import com.example.dcs.model.AppointmentRepository;
 import com.example.dcs.model.Doctor;
 import com.example.dcs.model.Doctor.Gender;
 import com.example.dcs.model.DoctorRepository;
+import com.example.dcs.model.Invoice;
+import com.example.dcs.model.Invoice.Status;
+import com.example.dcs.model.InvoiceRepository;
 
 @SpringBootApplication
 public class DessClinicSystemApplication {
@@ -24,7 +27,7 @@ public class DessClinicSystemApplication {
 		SpringApplication.run(DessClinicSystemApplication.class, args);
 	}
 
-	private void loadData(DoctorRepository doctorRepository,AppointmentRepository appointmentRepository) {
+	private void loadData(DoctorRepository doctorRepository,AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
 		ArrayList<Doctor> doctors = new ArrayList<>();
 		doctorRepository.save(
 				new Doctor(LocalDate.of(1989, 8, 29), "Kalie", "Kim", 
@@ -37,6 +40,16 @@ public class DessClinicSystemApplication {
 						Gender.Male, "ophthalmologist", 15));
 		
 		doctorRepository.findAll().forEach(System.out::println);	
+    
+    ArrayList<Invoice> invoices = new ArrayList<>();
+		invoiceRepository.save(
+				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada", 10));
+		invoiceRepository.save(
+				new Invoice(LocalDate.now(), "AMEX", 40, Status.Pending, "GCG USA", 20));
+		invoiceRepository.save(
+				new Invoice(LocalDate.now(), "MASTERCARD", 1000, Status.Unknown, "GCG COL", 5));
+		
+		invoiceRepository.findAll().forEach(System.out::println);
 		
 		
 		// custom - sri: start testing appointment - created only with patient creation
@@ -49,18 +62,14 @@ public class DessClinicSystemApplication {
 		
 	}
 	
+	
 	@Bean
-	ApplicationRunner init(DoctorRepository doctorRepository, AppointmentRepository appointmentRepository) {
+
+	ApplicationRunner init(DoctorRepository doctorRepository, AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
 		return args -> {
-			loadData(doctorRepository,appointmentRepository);
-			
+			loadData(doctorRepository,appointmentRepository, invoiceRepository);
 		};
 	}
-	
-
-	
-	
-	
 	
 	
 }
