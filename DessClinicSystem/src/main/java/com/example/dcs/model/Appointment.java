@@ -3,7 +3,7 @@ package com.example.dcs.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import com.example.dcs.model.Doctor.Gender;
+import com.example.dcs.model.Gender;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

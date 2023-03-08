@@ -29,12 +29,6 @@ public class Doctor {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
-	public enum Gender {
-	    Male,
-	    Female,
-	    Unknown
-	}
-	
 	@Column(name = "Specialty")
 	private String major;
 	
