@@ -14,7 +14,7 @@ import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import com.example.dcs.model.Appointment;
 import com.example.dcs.model.AppointmentRepository;
 import com.example.dcs.model.Doctor;
-import com.example.dcs.model.Doctor.Gender;
+import com.example.dcs.model.Gender;
 import com.example.dcs.model.DoctorRepository;
 import com.example.dcs.model.Invoice;
 import com.example.dcs.model.Invoice.Status;
