@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "dfd05b72-a2f5-42ec-9ffc-73dd5d3d23bc",
+		"_postman_id": "e42d4022-2425-4c8e-8b2a-9c6b2f9d3427",
 		"name": "DessClinicSystem",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -284,6 +284,410 @@
 							"path": [
 								"api",
 								"doctors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Get all patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/patients",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get patient by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/patients/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get patient by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}:{{port}}/api/patients/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"patients",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 21:56:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"firstName\": \"Mary\",\n    \"lastName\": \"Davis\",\n    \"gender\": \"Female\",\n    \"dob\": \"1989-06-04\",\n    \"mobile\": null,\n    \"email\": \"marydavis8964@gmail.com\",\n    \"address\": \"1222 34th Ave, Vancouver, BC, Canada\",\n    \"zipCode\": \"V5K 0A1\",\n    \"surgery\": \"\",\n    \"allergies\": \"\",\n    \"geneticDisease\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get patient with search string",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/patients?searchStr=mary",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patients"
+							],
+							"query": [
+								{
+									"key": "searchStr",
+									"value": "mary"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get patient with search string",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}:{{port}}/api/patients?searchStr=mary",
+									"host": [
+										"{{base_url}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"patients"
+									],
+									"query": [
+										{
+											"key": "searchStr",
+											"value": "mary"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 21:59:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"firstName\": \"Xu\",\n        \"lastName\": \"Mary\",\n        \"gender\": \"Male\",\n        \"dob\": \"1958-08-31\",\n        \"mobile\": null,\n        \"email\": \"xuxumarymary556@gmail.com\",\n        \"address\": \"221 102nd st, Surrey, BC, Canada\",\n        \"zipCode\": \"V3S 5B2\",\n        \"surgery\": \"Colostomy\",\n        \"allergies\": \"Fish\",\n        \"geneticDisease\": \"Asthma\"\n    },\n    {\n        \"id\": 1,\n        \"firstName\": \"Mary\",\n        \"lastName\": \"Davis\",\n        \"gender\": \"Female\",\n        \"dob\": \"1989-06-04\",\n        \"mobile\": null,\n        \"email\": \"marydavis8964@gmail.com\",\n        \"address\": \"1222 34th Ave, Vancouver, BC, Canada\",\n        \"zipCode\": \"V5K 0A1\",\n        \"surgery\": \"\",\n        \"allergies\": \"\",\n        \"geneticDisease\": \"\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create patient by Json",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\": \"Seu\",\r\n\t\"lastName\": \"Lin\",\r\n\t\"gender\": \"Female\",\r\n\t\"dob\": \"2000-11-21\",\r\n    \"mobile\": \"604-885-9856\",\r\n\t\"email\": \"1234seu1234@hotmail.com\",\r\n\t\"address\": \"1203-221 Market st, Surrey, BC, Canada\",\r\n\t\"zipCode\": \"V6S 5B4\",\r\n\t\"surgery\": \"\",\r\n\t\"allergies\": \"Milk\",\r\n\t\"geneticDisease\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/patients",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create patient by Json",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"firstName\": \"Seu\",\r\n\t\"lastName\": \"Lin\",\r\n\t\"gender\": \"Female\",\r\n\t\"dob\": \"2000-11-21\",\r\n    \"mobile\": \"604-885-9856\",\r\n\t\"email\": \"1234seu1234@hotmail.com\",\r\n\t\"address\": \"1203-221 Market st, Surrey, BC, Canada\",\r\n\t\"zipCode\": \"V6S 5B4\",\r\n\t\"surgery\": \"\",\r\n\t\"allergies\": \"Milk\",\r\n\t\"geneticDisease\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}:{{port}}/api/patients",
+									"host": [
+										"{{base_url}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"patients"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 22:55:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"firstName\": \"Seu\",\n    \"lastName\": \"Lin\",\n    \"gender\": \"Female\",\n    \"dob\": \"2000-11-21\",\n    \"mobile\": \"604-885-9856\",\n    \"email\": \"1234seu1234@hotmail.com\",\n    \"address\": \"1203-221 Market st, Surrey, BC, Canada\",\n    \"zipCode\": \"V6S 5B4\",\n    \"surgery\": \"\",\n    \"allergies\": \"Milk\",\n    \"geneticDisease\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update patient by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\": \"Seu\",\r\n\t\"lastName\": \"Lin\",\r\n\t\"gender\": \"Female\",\r\n\t\"dob\": \"2000-11-21\",\r\n\t\"email\": \"666seu666@yahoo.com\",\r\n\t\"address\": \"1203-221 Market st, Surrey, BC, Canada\",\r\n\t\"zipCode\": \"V6S 5B4\",\r\n\t\"surgery\": \"\",\r\n\t\"allergies\": \"Milk\",\r\n\t\"geneticDisease\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/patients/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patients",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update patient by id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"firstName\": \"Seu\",\r\n\t\"lastName\": \"Lin\",\r\n\t\"gender\": \"Female\",\r\n\t\"dob\": \"2000-11-21\",\r\n    \"mobile\": \"604-885-9856\",\r\n\t\"email\": \"666seu666@yahoo.com\",\r\n\t\"address\": \"1203-221 Market st, Surrey, BC, Canada\",\r\n\t\"zipCode\": \"V6S 5B4\",\r\n\t\"surgery\": \"\",\r\n\t\"allergies\": \"Milk\",\r\n\t\"geneticDisease\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}:{{port}}/api/patients/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"patients",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 22:29:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"firstName\": \"Seu\",\n    \"lastName\": \"Lin\",\n    \"gender\": \"Female\",\n    \"dob\": \"2000-11-21\",\n    \"mobile\": \"604-885-9856\",\n    \"email\": \"666seu666@yahoo.com\",\n    \"address\": \"1203-221 Market st, Surrey, BC, Canada\",\n    \"zipCode\": \"V6S 5B4\",\n    \"surgery\": \"\",\n    \"allergies\": \"Milk\",\n    \"geneticDisease\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete patient by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/patients/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"patients",
+								"4"
 							]
 						}
 					},
