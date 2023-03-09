@@ -19,6 +19,8 @@ import com.example.dcs.model.DoctorRepository;
 import com.example.dcs.model.Invoice;
 import com.example.dcs.model.Invoice.Status;
 import com.example.dcs.model.InvoiceRepository;
+import com.example.dcs.model.Patient;
+import com.example.dcs.model.PatientRepository;
 
 @SpringBootApplication
 public class DessClinicSystemApplication {
@@ -27,7 +29,7 @@ public class DessClinicSystemApplication {
 		SpringApplication.run(DessClinicSystemApplication.class, args);
 	}
 
-	private void loadData(DoctorRepository doctorRepository,AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
+	private void loadData(DoctorRepository doctorRepository, PatientRepository patientRepository, AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
 		ArrayList<Doctor> doctors = new ArrayList<>();
 		doctorRepository.save(
 				new Doctor(LocalDate.of(1989, 8, 29), "Kalie", "Kim", 
@@ -40,8 +42,28 @@ public class DessClinicSystemApplication {
 						Gender.Male, "ophthalmologist", 15));
 		
 		doctorRepository.findAll().forEach(System.out::println);	
-    
-    ArrayList<Invoice> invoices = new ArrayList<>();
+		
+
+		ArrayList<Patient> patients = new ArrayList<>();
+		patientRepository.save(
+				new Patient("Mary", "Davis", Gender.Female, LocalDate.of(1989, 6, 4),
+						"604-546-7798", "marydavis8964@gmail.com", "1222 34th Ave, Vancouver, BC, Canada",
+						"V5K 0A1", "", "", ""));
+
+		patientRepository.save(
+				new Patient("John", "Smith", Gender.Male, LocalDate.of(1919, 7, 21),
+						"778-846-7003", "", "503-6011 Cooney Rd, Richmond, BC, Canada",
+						"V6Y 4C5", "Aortic valve replacement", "Peanuts", "Diabetes"));
+		
+		patientRepository.save(
+				new Patient("Xu", "Mary", Gender.Male, LocalDate.of(1958, 8, 31),
+						"604-225-8721", "xuxumarymary556@gmail.com", "221 102nd st, Surrey, BC, Canada",
+						"V3S 5B2", "Colostomy", "Fish", "Asthma"));
+		
+		patientRepository.findAll().forEach(System.out::println);	
+		
+		
+		ArrayList<Invoice> invoices = new ArrayList<>();
 		invoiceRepository.save(
 				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada", 10));
 		invoiceRepository.save(
@@ -67,9 +89,9 @@ public class DessClinicSystemApplication {
 	
 	@Bean
 
-	ApplicationRunner init(DoctorRepository doctorRepository, AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
+	ApplicationRunner init(DoctorRepository doctorRepository, PatientRepository patientRepository, AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
 		return args -> {
-			loadData(doctorRepository,appointmentRepository, invoiceRepository);
+			loadData(doctorRepository, patientRepository, appointmentRepository, invoiceRepository);
 		};
 	}
 	
