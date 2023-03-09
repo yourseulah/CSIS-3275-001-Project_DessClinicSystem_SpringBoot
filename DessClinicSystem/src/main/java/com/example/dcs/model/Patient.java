@@ -53,11 +53,15 @@ public class Patient {
 	@Column(name="geneticDisease")
 	private String geneticDisease;
 
+	//constructors
+	public Patient() {}
+	
 	public Patient(String firstName, String lastName, Gender gender, LocalDate dob, String mobile, String email, String address, String zipCode, String surgery, String allergies, String geneticDisease){
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.gender=gender;
 		this.dob=dob;
+		this.mobile=mobile;
 		this.email=email;
 		this.address=address;
 		this.zipCode=zipCode;
