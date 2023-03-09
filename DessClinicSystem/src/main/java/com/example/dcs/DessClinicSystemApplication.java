@@ -48,6 +48,8 @@ public class DessClinicSystemApplication {
 				new Invoice(LocalDate.now(), "AMEX", 40, Status.Pending, "GCG USA", 20));
 		invoiceRepository.save(
 				new Invoice(LocalDate.now(), "MASTERCARD", 1000, Status.Unknown, "GCG COL", 5));
+		invoiceRepository.save(
+				new Invoice(LocalDate.now(), "TD", 1900, Status.Unknown, "HAPPY HEALTH", 5));
 		
 		invoiceRepository.findAll().forEach(System.out::println);
 		
