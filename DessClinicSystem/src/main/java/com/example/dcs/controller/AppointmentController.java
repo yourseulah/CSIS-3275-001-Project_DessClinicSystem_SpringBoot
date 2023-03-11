@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dcs.model.Appointment;
 import com.example.dcs.model.AppointmentRepository;
+import com.example.dcs.model.Patient;
+import com.example.dcs.model.PatientRepository;
 
 
 
@@ -28,6 +31,11 @@ public class AppointmentController {
 	
 	@Autowired
 	AppointmentRepository appointmentRepository;
+	
+	
+	// patient booking appointment
+	@Autowired
+	PatientRepository patientRepository;
 	
 	
 	// get all appointments (need to implement with patient ID, and doctorID)
@@ -70,6 +78,60 @@ public class AppointmentController {
 				return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
 		}*/
+		
+		
+		
+		// creating a new appointment
+		
+		@PostMapping("/appointments")
+		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt ) {
+			try {
+				System.out.println(appt);
+				System.out.println("Patient ID: " + appt.getPatient().getId());
+				Optional<Patient> pt = patientRepository.findById(appt.getPatient().getId());
+				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
+						appt.getVisitTime(), appt.getQuickNote(), appt.getPatient()));
+				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+		}
+		
+		
+		// Deleting a new appointment
+		
+
+		@DeleteMapping("/appointments/{aId}")
+		public ResponseEntity<HttpStatus> deleteDoctor(
+				@PathVariable("aId") long aId) {
+			try {
+				appointmentRepository.deleteById(aId);
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			} catch(Exception e) {
+				return new ResponseEntity<>(null, 
+						HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+		}
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 
 }

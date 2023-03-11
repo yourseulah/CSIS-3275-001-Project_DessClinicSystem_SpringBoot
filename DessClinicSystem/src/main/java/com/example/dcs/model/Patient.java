@@ -1,14 +1,22 @@
 package com.example.dcs.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,9 +27,20 @@ public class Patient {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@Column(name = "patientId")
+	private String patientId;
+	
 	@Column(name="firstName")
 	private String firstName;
 	
+	public String getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
+	}
+
 	@Column(name="lastName")
 	private String lastName;
 	
@@ -52,11 +71,32 @@ public class Patient {
 
 	@Column(name="geneticDisease")
 	private String geneticDisease;
+	
+	
+	// custom: relationship
+	
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
+	private Set<Appointment> appointments = new HashSet<>();
+	
+	
+	// one to many and one to one
+	
+	
+	
+	public Set<Appointment> getAppointments() {
+		return appointments;
+	}
+
+	public void setAppointments(Set<Appointment> appointments) {
+		this.appointments = appointments;
+	}
 
 	//constructors
 	public Patient() {}
 	
-	public Patient(String firstName, String lastName, Gender gender, LocalDate dob, String mobile, String email, String address, String zipCode, String surgery, String allergies, String geneticDisease){
+	public Patient(String firstName, String lastName, Gender gender, LocalDate dob, String mobile, String email, 
+			String address, String zipCode, String surgery, String allergies, String geneticDisease, String patientId){
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.gender=gender;
@@ -68,6 +108,7 @@ public class Patient {
 		this.surgery=surgery;
 		this.allergies=allergies;
 		this.geneticDisease=geneticDisease;
+		this.patientId = patientId;
 	}
 
 	public long getId() {

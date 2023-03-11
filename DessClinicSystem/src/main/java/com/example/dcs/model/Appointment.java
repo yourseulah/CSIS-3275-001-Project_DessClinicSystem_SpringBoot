@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import com.example.dcs.model.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -15,22 +17,38 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+
+import jakarta.persistence.ManyToOne;
+
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "appointments")
+//@Table(name = "appointments")
 public class Appointment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "appt_id")
 	private long appointmentId;
+	
+	//@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	//@JoinColumn(name = "patient_id", nullable = false)
+	//@JsonIgnore
+	//@JsonProperty("patient")
+	//private Patient patient;
+	
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_patient_id")
+	private Patient patient;
 	
 	@Column(name = "visit_date")
 	private String visitDate;
 	
 	@Column(name = "visit_time")
-	private LocalTime visitTime;
+	private String visitTime;
 	
 	@Column(name = "mobile")
 	private String mobileNumber;
@@ -50,25 +68,55 @@ public class Appointment {
 	@Column(name = "amount")
 	private double amount;
 	
-	@Column(name = "patient_id")
-	private long patientId;
+	//@Column(name = "patient_id")
+	//private long patientId;
 	
     @OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "invoice_id", referencedColumnName = "id")
 	private Invoice invoice;
+
 	
 	private long doctorId;
 	
 	
-	public Appointment() {}
+	public Patient getPatient() {
+		return patient;
+	}
 
-	public Appointment(String visitDate, LocalTime visitTime, String quickNote) {
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+
+	public long getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(long doctorId) {
+		this.doctorId = doctorId;
+	}
+
+	public Appointment() {}
+	
+
+	public Appointment(String visitDate, String visitTime, String quickNote) {
 		super();
 		this.visitDate = visitDate;
 		this.visitTime = visitTime;
 		this.quickNote = quickNote;
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
+	}
+	
+	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
+	{
+		this.visitDate = visitDate;
+		this.visitTime = visitTime;
+		this.quickNote = quickNote;
+		this.paymentStatus = 0; // not paid
+		this.amount = 0; // no charge
+		this.patient = patient;
+		patient.getAppointments().add(this);
 	}
 
 
@@ -92,12 +140,12 @@ public class Appointment {
 	}
 
 
-	public LocalTime getVisitTime() {
+	public String getVisitTime() {
 		return visitTime;
 	}
 
 
-	public void setVisitTime(LocalTime visitTime) {
+	public void setVisitTime(String visitTime) {
 		this.visitTime = visitTime;
 	}
 

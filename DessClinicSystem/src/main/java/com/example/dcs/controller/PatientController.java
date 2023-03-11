@@ -39,7 +39,7 @@ public class PatientController {
 			Patient newPatient = new Patient(patient.getFirstName(),patient.getLastName(),
 					patient.getGender(), patient.getDob(), patient.getMobile(), patient.getEmail(),
 					patient.getAddress(), patient.getZipCode(), patient.getSurgery(),
-					patient.getAllergies(), patient.getGeneticDisease());
+					patient.getAllergies(), patient.getGeneticDisease(), patient.getPatientId());
 			patientRepo.save(newPatient);
 			return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
 		} catch (Exception e) {

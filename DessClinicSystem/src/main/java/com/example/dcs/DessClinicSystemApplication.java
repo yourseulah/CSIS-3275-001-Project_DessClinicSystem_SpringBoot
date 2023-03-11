@@ -48,17 +48,17 @@ public class DessClinicSystemApplication {
 		patientRepository.save(
 				new Patient("Mary", "Davis", Gender.Female, LocalDate.of(1989, 6, 4),
 						"604-546-7798", "marydavis8964@gmail.com", "1222 34th Ave, Vancouver, BC, Canada",
-						"V5K 0A1", "", "", ""));
+						"V5K 0A1", "", "", "", "1234"));
 
 		patientRepository.save(
 				new Patient("John", "Smith", Gender.Male, LocalDate.of(1919, 7, 21),
 						"778-846-7003", "", "503-6011 Cooney Rd, Richmond, BC, Canada",
-						"V6Y 4C5", "Aortic valve replacement", "Peanuts", "Diabetes"));
+						"V6Y 4C5", "Aortic valve replacement", "Peanuts", "Diabetes", "5234"));
 		
 		patientRepository.save(
 				new Patient("Xu", "Mary", Gender.Male, LocalDate.of(1958, 8, 31),
 						"604-225-8721", "xuxumarymary556@gmail.com", "221 102nd st, Surrey, BC, Canada",
-						"V3S 5B2", "Colostomy", "Fish", "Asthma"));
+						"V3S 5B2", "Colostomy", "Fish", "Asthma", "6234"));
 		
 		patientRepository.findAll().forEach(System.out::println);	
 		
@@ -80,10 +80,10 @@ public class DessClinicSystemApplication {
 		// need to enter visit date, visit time and quick note only while creating appointment, 
 		// rest all will be coming from patient details
 		ArrayList<Appointment> appointments = new ArrayList<>();
-		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
-		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
-		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
-		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10","09:00", "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10", "10:00", "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10", "11:00", "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10", "12:00", "Testing"));
 		appointmentRepository.findAll().forEach(System.out::println);
 		// custom - sri: end
 		
