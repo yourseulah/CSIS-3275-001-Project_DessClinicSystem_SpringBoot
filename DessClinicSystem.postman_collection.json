@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e42d4022-2425-4c8e-8b2a-9c6b2f9d3427",
+		"_postman_id": "a93e4e7b-2f7a-4aae-ba71-ae171fb3f294",
 		"name": "DessClinicSystem",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -690,6 +690,35 @@
 								"4"
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Get Appointments",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create appointment with patient info",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete appointment by Id",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
