@@ -81,6 +81,9 @@ public class DessClinicSystemApplication {
 		// rest all will be coming from patient details
 		ArrayList<Appointment> appointments = new ArrayList<>();
 		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
+		appointmentRepository.save(new Appointment("2023-04-10", LocalTime.of(9, 00), "Testing"));
 		appointmentRepository.findAll().forEach(System.out::println);
 		// custom - sri: end
 		

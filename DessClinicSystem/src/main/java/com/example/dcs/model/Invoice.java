@@ -22,6 +22,9 @@ public class Invoice {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+    @OneToOne(mappedBy = "invoice")
+    private Appointment appointment;
+	
 	@Column(name = "payment_date")
 	private LocalDate paymentDate;
 	
@@ -47,8 +50,10 @@ public class Invoice {
 
 	}
 
-	public Invoice(LocalDate paymentDate, String method, double amount, Status status, String insuranceCompany,
-			int yearsOfPractice) {
+
+	public Invoice(LocalDate paymentDate, String method, double amount, Status status,
+			String insuranceCompany, int yearsOfPractice) {
+		super();
 		this.paymentDate = paymentDate;
 		this.method = method;
 		this.amount = amount;
@@ -56,6 +61,8 @@ public class Invoice {
 		this.insuranceCompany = insuranceCompany;
 		this.yearsOfPractice = yearsOfPractice;
 	}
+
+
 
 	public long getId() {
 		return id;
