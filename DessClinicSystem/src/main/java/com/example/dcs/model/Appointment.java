@@ -40,7 +40,9 @@ public class Appointment {
 	
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	//@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name = "fk_patient_id")
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_patient_id")
 	private Patient patient;
 	
