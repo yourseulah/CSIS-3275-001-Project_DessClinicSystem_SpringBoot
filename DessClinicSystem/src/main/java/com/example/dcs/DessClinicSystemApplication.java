@@ -98,6 +98,7 @@ public class DessClinicSystemApplication {
 		patientRepository.save(new Patient("Fortin","Audrey",Gender.Female,LocalDate.of(1956,3,27),"818-714-5980","uelramirez793@discardmail.com","55555 Hope River Rd, Chilliwack, BC, Canada","J5R 4W4","Prostatectomy","Chemical sensitivity","","2124"));
 		patientRepository.save(new Patient("Gagne","Gabriel",Gender.Female,LocalDate.of(1993,4,6),"843-442-5120","rahall460@inboxmails.com","66666 Airport Rd, Kelowna, BC, Canada","H9R 4R6","","","","2144"));
 		patientRepository.save(new Patient("Singh","Addison",Gender.Male,LocalDate.of(2015,9,11),"183-247-7023","inscott985@tempmails.info","77777 Kirschner Rd, Kelowna, BC, Canada","V3S 6K3","","","","2165"));
+<<<<<<< HEAD
 		
 		Patient patient1 = new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189");
 		Patient patient2 = new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213");
@@ -110,6 +111,12 @@ public class DessClinicSystemApplication {
 		patientRepository.save(patient3);
 		patientRepository.save(patient4);
 		//patientRepository.save(patient5);
+=======
+		patientRepository.save(new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189"));
+		patientRepository.save(new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213"));
+		patientRepository.save(new Patient("Bouchard","Lucy",Gender.Male,LocalDate.of(1970,1,11),"401-513-9460","anross342@maildropz.com","3187 Oakwood Avenue, Vancouver, BC, Canada","R2M 1Z1","","Anaphylaxis","","2226"));
+		patientRepository.save(new Patient("Gagne","Logan",Gender.Male,LocalDate.of(1944,6,23),"789-704-5999","ngonzalez278@trash-me.com","4821 Maple Lane, Vancouver, BC, Canada","V4T 4R4","Laminectomy","","","2249"));
+>>>>>>> 65912f0734cf4da1da03a7dcfef98743855f30ab
 		
 		patientRepository.findAll().forEach(System.out::println);	
 		
