@@ -112,13 +112,14 @@ public class Appointment {
 	
 	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
 	{
+		super();
 		this.visitDate = visitDate;
 		this.visitTime = visitTime;
 		this.quickNote = quickNote;
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
 		this.patient = patient;
-		patient.getAppointments().add(this);
+//		patient.getAppointments().add(this);
 	}
 
 
