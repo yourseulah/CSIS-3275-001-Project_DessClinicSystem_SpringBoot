@@ -82,15 +82,17 @@ public class AppointmentController {
 		
 		
 		// creating a new appointment
-		
 		@PostMapping("/appointments")
 		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt ) {
 			try {
 				System.out.println(appt);
-				System.out.println("Patient ID: " + appt.getPatient().getId());
-				Optional<Patient> pt = patientRepository.findById(appt.getPatient().getId());
+//				System.out.println("Patient ID: " + appt.getPatient().getId());
+				System.out.println("Patient ID: " + appt.getPatientId());
+//				Optional<Patient> pt = patientRepository.findById(appt.getPatient().getId());
+//				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
+//						appt.getVisitTime(), appt.getQuickNote(), appt.getPatient()));
 				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
-						appt.getVisitTime(), appt.getQuickNote(), appt.getPatient()));
+						appt.getVisitTime(), appt.getQuickNote(), appt.getPatientId()));
 				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -115,23 +117,5 @@ public class AppointmentController {
 		}
 		
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
 
 }

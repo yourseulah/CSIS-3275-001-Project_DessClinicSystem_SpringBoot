@@ -39,12 +39,12 @@ public class Appointment {
 	//private Patient patient;
 	
 	
-	
-	//@OneToOne(cascade = CascadeType.ALL)
 	//@JoinColumn(name = "fk_patient_id")
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_patient_id")
-	private Patient patient;
+	//@ManyToOne(cascade = CascadeType.ALL)
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "fk_patient_id", nullable=false)
+//	private Patient patient;
+	private long patientId;
 	
 	@Column(name = "visit_date")
 	private String visitDate;
@@ -81,12 +81,12 @@ public class Appointment {
 	private long doctorId;
 	
 	
-	public Patient getPatient() {
-		return patient;
+	public long getPatientId() {
+		return patientId;
 	}
 
-	public void setPatient(Patient patient) {
-		this.patient = patient;
+	public void setPatient(long patientId) {
+		this.patientId = patientId;
 	}
 
 
@@ -110,6 +110,21 @@ public class Appointment {
 		this.amount = 0; // no charge
 	}
 	
+//	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
+	public Appointment(String visitDate, String visitTime, String quickNote, long patientId)
+	{
+		super();
+		this.visitDate = visitDate;
+		this.visitTime = visitTime;
+		this.quickNote = quickNote;
+		this.paymentStatus = 0; // not paid
+		this.amount = 0; // no charge
+		this.patientId = patientId;
+//		this.patientId = patient.getId();
+//		patient.getAppointments().add(this);
+	}
+
+
 	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
 	{
 		super();
@@ -118,11 +133,10 @@ public class Appointment {
 		this.quickNote = quickNote;
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
-		this.patient = patient;
-//		patient.getAppointments().add(this);
+		this.patientId = patient.getId();
 	}
-
-
+	
+	
 	public long getAppointmentId() {
 		return appointmentId;
 	}

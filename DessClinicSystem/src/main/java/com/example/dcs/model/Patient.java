@@ -17,6 +17,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -75,22 +76,30 @@ public class Patient {
 	
 	// custom: relationship
 	
-	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JsonIgnore
-	private Set<Appointment> appointments = new HashSet<>();
+	private Appointment appointment;
+//	private Set<Appointment> appointments = new HashSet<>();
 	
 	
 	// one to many and one to one
-	
-	
-	
-	public Set<Appointment> getAppointments() {
-		return appointments;
-	}
 
-	public void setAppointments(Set<Appointment> appointments) {
-		this.appointments = appointments;
+	public Appointment getAppointments() {
+		return appointment;
 	}
+	
+//	public Set<Appointment> getAppointments() {
+//		return appointments;
+//	}
+
+	public void setAppointment(Appointment appointment) {
+		this.appointment = appointment;
+	}
+	
+//	public void setAppointments(Set<Appointment> appointments) {
+//		this.appointments = appointments;
+//	}
 
 	//constructors
 	public Patient() {}
