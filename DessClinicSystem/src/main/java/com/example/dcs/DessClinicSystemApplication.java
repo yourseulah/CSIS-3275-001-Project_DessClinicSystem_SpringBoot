@@ -96,13 +96,6 @@ public class DessClinicSystemApplication {
 		patientRepository.save(new Patient("Richardson","William",Gender.Female,LocalDate.of(1962,8,14),"176-484-8283","cooperamanda250@protonmail.com","33333 Clayburn Rd, Abbotsford, BC, Canada","V2L 3V1","","Cosmetic allergy","Prader-Willi syndrome","2094"));
 		patientRepository.save(new Patient("Mitchell","Ava",Gender.Female,LocalDate.of(1932,12,15),"994-612-7292","stewartmatthew899@gmail.com","44444 Old Yale Rd, Chilliwack, BC, Canada","B3H 3R3","","Fragrance allergy","Rett syndrome","2104"));
 		patientRepository.save(new Patient("Fortin","Audrey",Gender.Female,LocalDate.of(1956,3,27),"818-714-5980","uelramirez793@discardmail.com","55555 Hope River Rd, Chilliwack, BC, Canada","J5R 4W4","Prostatectomy","Chemical sensitivity","","2124"));
-		patientRepository.save(new Patient("Gagne","Gabriel",Gender.Female,LocalDate.of(1993,4,6),"843-442-5120","rahall460@inboxmails.com","66666 Airport Rd, Kelowna, BC, Canada","H9R 4R6","","","","2144"));
-		patientRepository.save(new Patient("Singh","Addison",Gender.Male,LocalDate.of(2015,9,11),"183-247-7023","inscott985@tempmails.info","77777 Kirschner Rd, Kelowna, BC, Canada","V3S 6K3","","","","2165"));
-		
-		patientRepository.save(new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189"));
-		patientRepository.save(new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213"));
-		patientRepository.save(new Patient("Bouchard","Lucy",Gender.Male,LocalDate.of(1970,1,11),"401-513-9460","anross342@maildropz.com","3187 Oakwood Avenue, Vancouver, BC, Canada","R2M 1Z1","","Anaphylaxis","","2226"));
-		patientRepository.save(new Patient("Gagne","Logan",Gender.Male,LocalDate.of(1944,6,23),"789-704-5999","ngonzalez278@trash-me.com","4821 Maple Lane, Vancouver, BC, Canada","V4T 4R4","Laminectomy","","","2249"));
 
 //		patientRepository.save(new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189"));
 //		patientRepository.save(new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213"));
@@ -111,6 +104,18 @@ public class DessClinicSystemApplication {
 //		patientRepository.save(new Patient("Singh","Addison",Gender.Male,LocalDate.of(2015,9,11),"183-247-7023","inscott985@tempmails.info","77777 Kirschner Rd, Kelowna, BC, Canada","V3S 6K3","","","","2165"));
 
 		Patient patient1 = new Patient("Singh","Addison",Gender.Male,LocalDate.of(2015,9,11),"183-247-7023","inscott985@tempmails.info","77777 Kirschner Rd, Kelowna, BC, Canada","V3S 6K3","","","","2165"); 
+		Patient patient2 = new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189");
+		Patient patient3 = new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213");
+		Patient patient4 = new Patient("Bouchard","Lucy",Gender.Male,LocalDate.of(1970,1,11),"401-513-9460","anross342@maildropz.com","3187 Oakwood Avenue, Vancouver, BC, Canada","R2M 1Z1","","Anaphylaxis","","2226");
+		Patient patient5 = new Patient("Gagne","Logan",Gender.Male,LocalDate.of(1944,6,23),"789-704-5999","ngonzalez278@trash-me.com","4821 Maple Lane, Vancouver, BC, Canada","V4T 4R4","Laminectomy","","","2249");
+		Patient patient6 = new Patient("Gagne","Gabriel",Gender.Female,LocalDate.of(1993,4,6),"843-442-5120","rahall460@inboxmails.com","66666 Airport Rd, Kelowna, BC, Canada","H9R 4R6","","","","2144");
+		
+		patientRepository.save(patient1);
+		patientRepository.save(patient2);
+		patientRepository.save(patient3);
+		patientRepository.save(patient4);
+		patientRepository.save(patient5);
+		patientRepository.save(patient6);		
 		
 		patientRepository.findAll().forEach(System.out::println);	
 		
@@ -132,17 +137,22 @@ public class DessClinicSystemApplication {
 		// need to enter visit date, visit time and quick note only while creating appointment, 
 		// rest all will be coming from patient details
 		
+		/*
+		System.out.println(patient1.getId());
+		System.out.println(patient2.getId());
+		System.out.println(patient3.getId());
+		System.out.println(patient4.getId());
+		System.out.println(patient5.getId());
+		System.out.println(patient6.getId());
+		*/
 		
 		ArrayList<Appointment> appointments = new ArrayList<>();
-		appointmentRepository.save(new Appointment("2023-04-10", "09:00", "Vomit", new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189")));
-		appointmentRepository.save(new Appointment("2023-04-10", "10:00", "Stomach", new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213")));
-		appointmentRepository.save(new Appointment("2023-04-10", "11:00", "Cold", new Patient("Bouchard","Lucy",Gender.Male,LocalDate.of(1970,1,11),"401-513-9460","anross342@maildropz.com","3187 Oakwood Avenue, Vancouver, BC, Canada","R2M 1Z1","","Anaphylaxis","","2226")));
-		appointmentRepository.save(new Appointment("2023-04-10", "12:00", "Flu Shot", new Patient("Gagne","Logan",Gender.Male,LocalDate.of(1944,6,23),"789-704-5999","ngonzalez278@trash-me.com","4821 Maple Lane, Vancouver, BC, Canada","V4T 4R4","Laminectomy","","","2249")));
-		appointmentRepository.save(new Appointment("2023-04-10", "13:00", "Feeling dizzy", new Patient("Singh","Addison",Gender.Male,LocalDate.of(2015,9,11),"183-247-7023","inscott985@tempmails.info","77777 Kirschner Rd, Kelowna, BC, Canada","V3S 6K3","","","","2165")));
-		appointmentRepository.save(new Appointment("2023-04-10", "14:00", "Fever/Cough", new Patient("Paul","Smith",Gender.Male,LocalDate.of(1954,7,23),"604-704-5991","paulsmith111@1234-me.com","21 market Lane, Vancouver, BC, Canada","V5T 4R6","","","","2255")));
-		
-		appointmentRepository.save(new Appointment("2023-04-10", "14:00", "Fever/Cough", patient1.getId()));
-		
+		appointmentRepository.save(new Appointment("2023-04-10", "14:00", "Fever/Cough", patient1.getId(), patient1.getFullName()));
+		appointmentRepository.save(new Appointment("2023-04-10", "09:00", "Vomit", patient2.getId(), patient2.getFullName()));
+		appointmentRepository.save(new Appointment("2023-04-10", "10:00", "Stomach", patient3.getId(), patient3.getFullName()));
+		appointmentRepository.save(new Appointment("2023-04-10", "11:00", "Cold", patient4.getId(), patient4.getFullName()));
+		appointmentRepository.save(new Appointment("2023-04-10", "12:00", "Flu Shot", patient5.getId(), patient5.getFullName()));
+		appointmentRepository.save(new Appointment("2023-04-10", "13:00", "Feeling dizzy", patient6.getId(), patient6.getFullName()));
 		
 		appointmentRepository.findAll().forEach(System.out::println);
 		// custom - sri: end

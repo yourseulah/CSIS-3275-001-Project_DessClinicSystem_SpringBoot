@@ -216,4 +216,8 @@ public class Patient {
 		this.geneticDisease = geneticDisease;
 	}
 	
+	public String getFullName() {
+		return firstName+" "+lastName;
+	}
+	
 }

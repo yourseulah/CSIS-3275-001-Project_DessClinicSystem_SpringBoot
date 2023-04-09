@@ -61,6 +61,10 @@ public class AppointmentController {
 			}
 		}
 		
+		
+	
+		
+		
 		// runs when we see a create appointment booking page
 		// @GetMapping("/appointments/{aId}")
 		
@@ -92,7 +96,7 @@ public class AppointmentController {
 //				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
 //						appt.getVisitTime(), appt.getQuickNote(), appt.getPatient()));
 				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
-						appt.getVisitTime(), appt.getQuickNote(), appt.getPatientId()));
+						appt.getVisitTime(), appt.getQuickNote(), appt.getPatientId(), appt.getPatientName()));
 				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -46,17 +46,20 @@ public class Appointment {
 //	private Patient patient;
 	private long patientId;
 	
+	@Column(name = "patient_name")
+	private String patientName;
+	
 	@Column(name = "visit_date")
 	private String visitDate;
 	
 	@Column(name = "visit_time")
 	private String visitTime;
 	
-	@Column(name = "mobile")
-	private String mobileNumber;
+	//@Column(name = "mobile")
+	//private String mobileNumber;
 	
-	@Column(name = "email")
-	private String email;
+	//@Column(name = "email")
+	//private String email;
 	
 	@Column(name = "quick_note")
 	private String quickNote;
@@ -99,7 +102,6 @@ public class Appointment {
 	}
 
 	public Appointment() {}
-	
 
 	public Appointment(String visitDate, String visitTime, String quickNote) {
 		super();
@@ -111,7 +113,7 @@ public class Appointment {
 	}
 	
 //	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
-	public Appointment(String visitDate, String visitTime, String quickNote, long patientId)
+	public Appointment(String visitDate, String visitTime, String quickNote, long patientId, String patientName)
 	{
 		super();
 		this.visitDate = visitDate;
@@ -120,6 +122,7 @@ public class Appointment {
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
 		this.patientId = patientId;
+		this.patientName = patientName;
 //		this.patientId = patient.getId();
 //		patient.getAppointments().add(this);
 	}
@@ -134,6 +137,7 @@ public class Appointment {
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
 		this.patientId = patient.getId();
+		this.patientName = patient.getFullName();
 	}
 	
 	
@@ -167,24 +171,24 @@ public class Appointment {
 	}
 
 
-	public String getMobileNumber() {
-		return mobileNumber;
-	}
+//	public String getMobileNumber() {
+//		return mobileNumber;
+//	}
 
 
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
+//	public void setMobileNumber(String mobileNumber) {
+//		this.mobileNumber = mobileNumber;
+//	}
 
 
-	public String getEmail() {
-		return email;
-	}
+//	public String getEmail() {
+//		return email;
+//	}
 
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+//	public void setEmail(String email) {
+//		this.email = email;
+//	}
 
 
 	public String getQuickNote() {
@@ -224,6 +228,14 @@ public class Appointment {
 
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+	
+	public String getPatientName() {
+		return patientName;
+	}
+	
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
 	}
 	
 	
