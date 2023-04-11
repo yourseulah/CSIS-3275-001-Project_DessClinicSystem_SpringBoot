@@ -30,24 +30,14 @@ public class Appointment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "appt_id")
-	private long appointmentId;
-	
-	//@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	//@JoinColumn(name = "patient_id", nullable = false)
-	//@JsonIgnore
-	//@JsonProperty("patient")
-	//private Patient patient;
+	private long id;
+//	private long appointmentId;
 	
 	
-	//@JoinColumn(name = "fk_patient_id")
-	//@ManyToOne(cascade = CascadeType.ALL)
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "fk_patient_id", nullable=false)
-//	private Patient patient;
-	private long patientId;
-	
-	@Column(name = "patient_name")
-	private String patientName;
+//	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "patient_id", nullable = true)
+	private Patient patient;
 	
 	@Column(name = "visit_date")
 	private String visitDate;
@@ -55,11 +45,11 @@ public class Appointment {
 	@Column(name = "visit_time")
 	private String visitTime;
 	
-	//@Column(name = "mobile")
-	//private String mobileNumber;
-	
-	//@Column(name = "email")
-	//private String email;
+//	@Column(name = "mobile")
+//	private String mobileNumber;
+//	
+//	@Column(name = "email")
+//	private String email;
 	
 	@Column(name = "quick_note")
 	private String quickNote;
@@ -142,14 +132,26 @@ public class Appointment {
 	
 	
 	public long getAppointmentId() {
-		return appointmentId;
+		return id;
 	}
 
 
 	public void setAppointmentId(long appointmentId) {
-		this.appointmentId = appointmentId;
+		this.id = appointmentId;
 	}
 
+	
+//	public long getAppointmentId() {
+//		return appointmentId;
+//	}
+//
+//
+//	public void setAppointmentId(long appointmentId) {
+//		this.appointmentId = appointmentId;
+//	}
+	
+	
+	
 
 	public String getVisitDate() {
 		return visitDate;
@@ -174,18 +176,18 @@ public class Appointment {
 //	public String getMobileNumber() {
 //		return mobileNumber;
 //	}
-
-
+//
+//
 //	public void setMobileNumber(String mobileNumber) {
 //		this.mobileNumber = mobileNumber;
 //	}
-
-
+//
+//
 //	public String getEmail() {
 //		return email;
 //	}
-
-
+//
+//
 //	public void setEmail(String email) {
 //		this.email = email;
 //	}

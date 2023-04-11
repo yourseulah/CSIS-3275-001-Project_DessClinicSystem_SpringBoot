@@ -29,6 +29,8 @@ import com.example.dcs.model.PatientRepository;
 @RequestMapping("/api")
 public class AppointmentController {
 	
+	boolean debug = false;
+	
 	@Autowired
 	AppointmentRepository appointmentRepository;
 	
@@ -90,13 +92,26 @@ public class AppointmentController {
 		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt ) {
 			try {
 				System.out.println(appt);
-//				System.out.println("Patient ID: " + appt.getPatient().getId());
-				System.out.println("Patient ID: " + appt.getPatientId());
+				if(debug) System.out.println("OK-a0");				
+
+				
+				System.out.println("Patient ID: " + appt.getPatient().getId());
+				
+				Patient pat = appt.getPatient();
+				if(debug) System.out.println("OK-a1");				
+				Appointment newApp = new Appointment(appt.getVisitDate(), appt.getVisitTime(), appt.getQuickNote());
+				if(debug) System.out.println("OK-a2");				
+				
+				newApp.setPatient(pat);
+				if(debug) System.out.println("OK-a3");				
+				
 //				Optional<Patient> pt = patientRepository.findById(appt.getPatient().getId());
-//				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
-//						appt.getVisitTime(), appt.getQuickNote(), appt.getPatient()));
-				Appointment newAppt = appointmentRepository.save(new Appointment(appt.getVisitDate(),
-						appt.getVisitTime(), appt.getQuickNote(), appt.getPatientId(), appt.getPatientName()));
+//				System.out.println("OK-a4");				
+
+				Appointment newAppt = appointmentRepository.save(newApp);
+				appointmentRepository.save(newApp);
+				
+				if(debug) System.out.println("OK-a5");				
 				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -106,13 +121,23 @@ public class AppointmentController {
 		
 		
 		// Deleting a new appointment
-		
-
-		@DeleteMapping("/appointments/{aId}")
-		public ResponseEntity<HttpStatus> deleteDoctor(
-				@PathVariable("aId") long aId) {
+		@DeleteMapping("/appointments/{id}")
+		public ResponseEntity<HttpStatus> deleteAppointment(
+				@PathVariable("id") long id) {
 			try {
-				appointmentRepository.deleteById(aId);
+				
+				Appointment appt;
+				Patient pat;
+				
+				Optional<Appointment> apt = appointmentRepository.findById(id);
+				if(apt.isPresent()) {
+					appt = apt.get();
+					pat = appt.getPatient();
+					pat.removeAppointment(appt);
+					if(debug) System.out.println(appt.getPatient().getId());
+				}
+				
+				appointmentRepository.deleteById(id);
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			} catch(Exception e) {
 				return new ResponseEntity<>(null, 
@@ -121,5 +146,6 @@ public class AppointmentController {
 		}
 		
 
+	
 
 }

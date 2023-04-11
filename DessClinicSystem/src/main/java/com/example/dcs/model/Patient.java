@@ -1,7 +1,9 @@
 package com.example.dcs.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -76,26 +78,29 @@ public class Patient {
 	
 	// custom: relationship
 	
-//	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@OneToOne(cascade = CascadeType.ALL)
 	@JsonIgnore
-	private Appointment appointment;
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Appointment> appointments = new ArrayList<>();
 //	private Set<Appointment> appointments = new HashSet<>();
 	
 	
 	// one to many and one to one
+	
+	
+	
+	public List<Appointment> getAppointments() {
+		return appointments;
+	}
 
-	public Appointment getAppointments() {
-		return appointment;
+	public void addAppointment(Appointment appointment) {
+		this.appointments.add(appointment);
 	}
 	
-//	public Set<Appointment> getAppointments() {
-//		return appointments;
-//	}
-
-	public void setAppointment(Appointment appointment) {
-		this.appointment = appointment;
-	}
+	public void removeAppointment(Appointment appointment) {
+		this.appointments.remove(appointment);
+	}	
+	
+	
 	
 //	public void setAppointments(Set<Appointment> appointments) {
 //		this.appointments = appointments;
