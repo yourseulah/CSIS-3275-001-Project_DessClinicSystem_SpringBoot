@@ -69,19 +69,8 @@ public class Appointment {
     @OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "invoice_id", referencedColumnName = "id")
 	private Invoice invoice;
-
 	
 	private long doctorId;
-	
-	
-	public long getPatientId() {
-		return patientId;
-	}
-
-	public void setPatient(long patientId) {
-		this.patientId = patientId;
-	}
-
 
 	public long getDoctorId() {
 		return doctorId;
@@ -101,21 +90,6 @@ public class Appointment {
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
 	}
-	
-//	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
-	public Appointment(String visitDate, String visitTime, String quickNote, long patientId, String patientName)
-	{
-		super();
-		this.visitDate = visitDate;
-		this.visitTime = visitTime;
-		this.quickNote = quickNote;
-		this.paymentStatus = 0; // not paid
-		this.amount = 0; // no charge
-		this.patientId = patientId;
-		this.patientName = patientName;
-//		this.patientId = patient.getId();
-//		patient.getAppointments().add(this);
-	}
 
 
 	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
@@ -126,8 +100,7 @@ public class Appointment {
 		this.quickNote = quickNote;
 		this.paymentStatus = 0; // not paid
 		this.amount = 0; // no charge
-		this.patientId = patient.getId();
-		this.patientName = patient.getFullName();
+		this.patient = patient;
 	}
 	
 	
@@ -173,25 +146,13 @@ public class Appointment {
 	}
 
 
-//	public String getMobileNumber() {
-//		return mobileNumber;
-//	}
-//
-//
-//	public void setMobileNumber(String mobileNumber) {
-//		this.mobileNumber = mobileNumber;
-//	}
-//
-//
-//	public String getEmail() {
-//		return email;
-//	}
-//
-//
-//	public void setEmail(String email) {
-//		this.email = email;
-//	}
+	public Patient getPatient() {
+		return patient;
+	}
 
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
 
 	public String getQuickNote() {
 		return quickNote;
@@ -232,13 +193,6 @@ public class Appointment {
 		this.amount = amount;
 	}
 	
-	public String getPatientName() {
-		return patientName;
-	}
-	
-	public void setPatientName(String patientName) {
-		this.patientName = patientName;
-	}
 	
 	
 	

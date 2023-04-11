@@ -141,39 +141,6 @@ public class DessClinicSystemApplication {
 		Appointment app3 = new Appointment("2023-04-10", "11:00", "Flu Shot");
 		Appointment app4 = new Appointment("2023-04-10", "12:00", "Covid-19");
 		Appointment app5 = new Appointment("2023-04-11", "13:00", "Vomit");
-
-		
-		
-		
-		if(debug) System.out.println("OK1");
-		app1.setPatient(patient1);
-		app2.setPatient(patient2);
-		app3.setPatient(patient3);
-		app4.setPatient(patient4);
-		app5.setPatient(patient5);
-		if(debug) System.out.println("OK2");
-//		patient1.addAppointment(app1);
-		if(debug) System.out.println("OK3");
-		Appointment newApp = appointmentRepository.save(app1);
-		appointmentRepository.save(app2);
-		appointmentRepository.save(app3);
-		appointmentRepository.save(app4);
-		appointmentRepository.save(app5);
-		if(debug) System.out.println("OK4");
-		
-		System.out.println(newApp.getAppointmentId());
-		if(debug) System.out.println("OK5");
-		
-		
-//		appointmentRepository.save(new Appointment("2023-04-10", "09:00", "Cold", new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189")));
-		
-		Appointment app1 = new Appointment("2023-04-10", "09:00", "Cold");
-		Appointment app2 = new Appointment("2023-04-10", "10:00", "Fever");
-		Appointment app3 = new Appointment("2023-04-10", "11:00", "Flu Shot");
-		Appointment app4 = new Appointment("2023-04-10", "12:00", "Covid-19");
-		Appointment app5 = new Appointment("2023-04-11", "13:00", "Vomit");
-
-		
 		
 		
 		if(debug) System.out.println("OK1");
@@ -194,6 +161,7 @@ public class DessClinicSystemApplication {
 		
 		System.out.println(newApp.getAppointmentId());
 		if(debug) System.out.println("OK5");
+		
 		
 		
 		ArrayList<Appointment> appointments = new ArrayList<>();
