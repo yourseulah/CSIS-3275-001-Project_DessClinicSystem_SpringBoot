@@ -25,6 +25,9 @@ public class Invoice {
     @OneToOne(mappedBy = "invoice")
     private Appointment appointment;
 	
+	@Column(name = "appointment_id")
+	private long appointmentID;
+	
 	@Column(name = "payment_date")
 	private LocalDate paymentDate;
 	

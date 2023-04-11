@@ -70,6 +70,14 @@ public class Appointment {
 	@JoinColumn(name = "invoice_id", referencedColumnName = "id")
 	private Invoice invoice;
 	
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
+
 	private long doctorId;
 
 	public long getDoctorId() {
@@ -102,6 +110,8 @@ public class Appointment {
 		this.amount = 0; // no charge
 		this.patient = patient;
 	}
+	
+	
 	
 	
 	public long getAppointmentId() {

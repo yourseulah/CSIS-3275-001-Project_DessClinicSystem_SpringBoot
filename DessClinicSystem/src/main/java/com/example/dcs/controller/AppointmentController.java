@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dcs.model.Appointment;
 import com.example.dcs.model.AppointmentRepository;
+import com.example.dcs.model.Invoice;
+import com.example.dcs.model.InvoiceRepository;
 import com.example.dcs.model.Patient;
 import com.example.dcs.model.PatientRepository;
 
@@ -33,6 +35,9 @@ public class AppointmentController {
 	
 	@Autowired
 	AppointmentRepository appointmentRepository;
+	
+	@Autowired
+	InvoiceRepository invoiceRepository;
 	
 	
 	// patient booking appointment
@@ -88,9 +93,17 @@ public class AppointmentController {
 		
 		
 		// creating a new appointment
-		@PostMapping("/appointments")
-		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt ) {
+		@PostMapping("/appointments/{paymentId}")
+		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt, @PathVariable Long paymentId ) {
 			try {
+				
+				
+				Optional<Invoice> invoice = invoiceRepository.findById(paymentId);
+				
+				Invoice invoiceObj = invoice.get();
+
+
+				
 				System.out.println(appt);
 				if(debug) System.out.println("OK-a0");				
 
@@ -100,6 +113,9 @@ public class AppointmentController {
 				Patient pat = appt.getPatient();
 				if(debug) System.out.println("OK-a1");				
 				Appointment newApp = new Appointment(appt.getVisitDate(), appt.getVisitTime(), appt.getQuickNote());
+				
+				newApp.setInvoice(invoiceObj);
+				
 				if(debug) System.out.println("OK-a2");				
 				
 				newApp.setPatient(pat);
