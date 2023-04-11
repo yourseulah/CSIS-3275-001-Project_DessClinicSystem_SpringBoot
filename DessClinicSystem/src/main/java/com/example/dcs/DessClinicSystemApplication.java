@@ -194,7 +194,6 @@ public class DessClinicSystemApplication {
 	
 	
 	@Bean
-
 	ApplicationRunner init(DoctorRepository doctorRepository, PatientRepository patientRepository, AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
 		return args -> {
 			loadData(doctorRepository, patientRepository, appointmentRepository, invoiceRepository);
