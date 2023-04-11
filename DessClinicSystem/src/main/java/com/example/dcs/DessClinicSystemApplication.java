@@ -117,13 +117,13 @@ public class DessClinicSystemApplication {
 		
 		ArrayList<Invoice> invoices = new ArrayList<>();
 		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada", 10));
+				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada"));
 		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "AMEX", 40, Status.Pending, "GCG USA", 20));
+				new Invoice(LocalDate.now(), "AMEX", 40, Status.Pending, "GCG USA"));
 		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "MASTERCARD", 1000, Status.Unknown, "GCG COL", 5));
+				new Invoice(LocalDate.now(), "MASTERCARD", 1000, Status.Unknown, "GCG COL"));
 		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "TD", 1900, Status.Unknown, "HAPPY HEALTH", 5));
+				new Invoice(LocalDate.now(), "TD", 1900, Status.Unknown, "HAPPY HEALTH"));
 		
 		invoiceRepository.findAll().forEach(System.out::println);
 		

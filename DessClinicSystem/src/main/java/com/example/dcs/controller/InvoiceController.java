@@ -45,9 +45,8 @@ public class InvoiceController {
    				 invoice.getPaymentDate(), 
    				 invoice.getMethod(), 
    				 invoice.getAmount(), 
-   				 invoice.getStatus(), 
-   				 invoice.getInsuranceCompany(), 
-   				 invoice.getYearsOfPractice());
+   				 invoice.getStatus(),
+   				 invoice.getInsuranceCompany());
    		 
    		invoiceRepository.save(newInvoice);
    		 
@@ -85,7 +84,6 @@ public class InvoiceController {
 			newInvoice.setMethod(invoice.getMethod());
 			newInvoice.setPaymentDate(invoice.getPaymentDate());
 			newInvoice.setStatus(invoice.getStatus());
-			newInvoice.setYearsOfPractice(invoice.getYearsOfPractice());
 			
 			return new ResponseEntity<>(invoiceRepository.save(newInvoice), HttpStatus.OK);
 

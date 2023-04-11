@@ -40,11 +40,7 @@ public class Invoice {
 		
 	@Column(name = "insurance_company")
 	private String insuranceCompany;
-	
-	@Column(name = "years_of_practice")
-	private int yearsOfPractice;
-	
-	
+		
 
 	public Invoice() {
 
@@ -52,16 +48,14 @@ public class Invoice {
 
 
 	public Invoice(LocalDate paymentDate, String method, double amount, Status status,
-			String insuranceCompany, int yearsOfPractice) {
+			String insuranceCompany) {
 		super();
 		this.paymentDate = paymentDate;
 		this.method = method;
 		this.amount = amount;
 		this.status = status;
 		this.insuranceCompany = insuranceCompany;
-		this.yearsOfPractice = yearsOfPractice;
 	}
-
 
 
 	public long getId() {
@@ -107,16 +101,5 @@ public class Invoice {
 	public void setInsuranceCompany(String insuranceCompany) {
 		this.insuranceCompany = insuranceCompany;
 	}
-
-	public int getYearsOfPractice() {
-		return yearsOfPractice;
-	}
-
-	public void setYearsOfPractice(int yearsOfPractice) {
-		this.yearsOfPractice = yearsOfPractice;
-	}
-
-
-	
 
 }
