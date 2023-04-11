@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a93e4e7b-2f7a-4aae-ba71-ae171fb3f294",
+		"_postman_id": "21b059e8-88f4-4bee-bebe-33c137d29f46",
 		"name": "DessClinicSystem",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -702,23 +702,66 @@
 					"name": "Get Appointments",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/appointments",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Create appointment with patient info",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"patient\": {\r\n            \"id\": 44,\r\n            \"patientId\": \"2189\",\r\n            \"firstName\": \"Pelletier\",\r\n            \"lastName\": \"Thomas\",\r\n            \"gender\": \"Male\",\r\n            \"dob\": \"2006-03-06\",\r\n            \"mobile\": \"444-410-8052\",\r\n            \"email\": \"amartinez162@spammik.com\",\r\n            \"address\": \"88888 Lawrence Ave, Kelowna, BC, Canada\",\r\n            \"zipCode\": \"R3L 1T8\",\r\n            \"surgery\": \"\",\r\n            \"allergies\": \"\",\r\n            \"geneticDisease\": \"\",\r\n            \"fullName\": \"Pelletier Thomas\"\r\n        },\r\n        \"visitDate\": \"2023-04-10\",\r\n        \"visitTime\": \"10:00\",\r\n        \"quickNote\": \"Fever\",\r\n        \"doctorTranscript\": null,\r\n        \"paymentStatus\": 0,\r\n        \"amount\": 0.0,\r\n        \"doctorId\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/appointments",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Delete appointment by Id",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}:{{port}}/api/appointments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"appointments",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
