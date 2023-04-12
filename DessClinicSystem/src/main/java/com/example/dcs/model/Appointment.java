@@ -54,8 +54,8 @@ public class Appointment {
 	@Column(name = "quick_note")
 	private String quickNote;
 	
-	@Column(name = "doctor_transcript")
-	private String doctorTranscript;
+//	@Column(name = "doctor_transcript")
+//	private String doctorTranscript;
 	
 	@Column(name = "payment_status")
 	private int paymentStatus; // 1 - paid, 0 - unpaid
