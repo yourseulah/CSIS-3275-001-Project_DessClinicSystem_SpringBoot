@@ -39,7 +39,7 @@ public class InvoiceController {
 	}
 	
     @PostMapping("/invoices")
-    public ResponseEntity<Invoice> createCountry(@RequestBody Invoice invoice){
+    public ResponseEntity<Invoice> createInvoice(@RequestBody Invoice invoice){
    	 try {
    		 Invoice newInvoice = new Invoice(
    				 invoice.getPaymentDate(), 
