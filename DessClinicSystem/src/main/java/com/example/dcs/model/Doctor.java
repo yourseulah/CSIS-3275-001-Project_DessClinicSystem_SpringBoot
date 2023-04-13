@@ -19,13 +19,13 @@ public class Doctor {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long dId;
 	
-	@Column(name = "Date of Birth")
+	@Column(name = "DOB")
 	private LocalDate dDoB;
 	
-	@Column(name = "First Name")
+	@Column(name = "First_Name")
 	private String dFName;
 	
-	@Column(name = "Last Name")
+	@Column(name = "Last_Name")
 	private String dLName;
 	
 	@Column(name = "Gender")
@@ -35,7 +35,7 @@ public class Doctor {
 	@Column(name = "Specialty")
 	private String major;
 	
-	@Column(name = "Years of Practice")
+	@Column(name = "Years_of_Practice")
 	private int dYoP;
 
 	@JsonIgnore
