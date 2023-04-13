@@ -75,8 +75,7 @@ public class AppointmentController {
 		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt, 
 				@PathVariable Long paymentId) {
 			try {
-				if(appt.getDoctor().getdId()==0) appt.getDoctor().setdId(1);
-				
+			
 				Optional<Invoice> invoice = invoiceRepository.findById(paymentId);
 				Optional<Doctor> doctor = doctorRepository.findById(appt.getDoctor().getdId());
 				System.out.println("doctor:"+ doctor);
