@@ -22,7 +22,7 @@ import com.example.dcs.model.PatientRepository;
 @SpringBootApplication
 public class DessClinicSystemApplication {
 
-	boolean debug=false;
+	boolean debug=true;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DessClinicSystemApplication.class, args);
@@ -36,9 +36,6 @@ public class DessClinicSystemApplication {
 		doctorRepository.save(
 				new Doctor(LocalDate.of(1982, 2, 07), "Becky", "Smith", 
 						Gender.Female, "gynecologist", 10));
-		doctorRepository.save(
-				new Doctor(LocalDate.of(1978, 5, 19), "Paul", "Hart", 
-						Gender.Male, "ophthalmologist", 15));
 		
 		doctorRepository.findAll().forEach(System.out::println);	
 		
@@ -104,7 +101,6 @@ public class DessClinicSystemApplication {
 		Patient patient3 = new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213");
 		Patient patient4 = new Patient("Bouchard","Lucy",Gender.Male,LocalDate.of(1970,1,11),"401-513-9460","anross342@maildropz.com","3187 Oakwood Avenue, Vancouver, BC, Canada","R2M 1Z1","","Anaphylaxis","","2226");
 		Patient patient5 = new Patient("Gagne","Logan",Gender.Male,LocalDate.of(1944,6,23),"789-704-5999","ngonzalez278@trash-me.com","4821 Maple Lane, Vancouver, BC, Canada","V4T 4R4","Laminectomy","","","2249");
-		Patient patient6 = new Patient("Gagne","Gabriel",Gender.Female,LocalDate.of(1993,4,6),"843-442-5120","rahall460@inboxmails.com","66666 Airport Rd, Kelowna, BC, Canada","H9R 4R6","","","","2144");
 		
 		patientRepository.save(patient1);
 		patientRepository.save(patient2);
@@ -112,10 +108,9 @@ public class DessClinicSystemApplication {
 		patientRepository.save(patient4);
 		patientRepository.save(patient5);
 		
-		patientRepository.findAll().forEach(System.out::println);	
+		patientRepository.findAll().forEach(System.out::println);		
 		
-		
-		ArrayList<Invoice> invoices = new ArrayList<>();
+//		ArrayList<Invoice> invoices = new ArrayList<>();
 		invoiceRepository.save(
 				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada"));
 		invoiceRepository.save(
@@ -126,16 +121,7 @@ public class DessClinicSystemApplication {
 				new Invoice(LocalDate.now(), "TD", 1900, Status.Unknown, "HAPPY HEALTH"));
 		
 		invoiceRepository.findAll().forEach(System.out::println);
-		
-		
-		// custom - sri: start testing appointment - created only with patient creation
-		// need to enter visit date, visit time and quick note only while creating appointment, 
-		// rest all will be coming from patient details
-		
-
-		
-//		appointmentRepository.save(new Appointment("2023-04-10", "09:00", "Cold", new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189")));
-		
+					
 		Appointment app1 = new Appointment("2023-04-10", "09:00", "Cold");
 		Appointment app2 = new Appointment("2023-04-10", "10:00", "Fever");
 		Appointment app3 = new Appointment("2023-04-10", "11:00", "Flu Shot");
@@ -148,50 +134,50 @@ public class DessClinicSystemApplication {
 		Invoice inv4 = new Invoice(LocalDate.now(), "VISA", 400, Status.Paid, "GCG Canada");
 		Invoice inv5 = new Invoice(LocalDate.now(), "VISA", 500, Status.Paid, "GCG Canada");
 		
+		Doctor doc1 = new Doctor(LocalDate.of(1968, 5, 19), "John", "Davis", 
+						Gender.Male, "General", 25);
+		doctorRepository.save(doc1);
+		
+		Doctor doc2 = new Doctor(LocalDate.of(1978, 5, 19), "Paul", "Hart", 
+						Gender.Male, "ophthalmologist", 15);
+		doctorRepository.save(doc2);
 		
 		if(debug) System.out.println("OK1");
 		app1.setPatient(patient1);
+		if(debug) System.out.println("OK1b");
 		app1.setInvoice(inv1);
-		
+		if(debug) System.out.println("OKc");
+		app1.setDoctor(doc1);
+
+		if(debug) System.out.println("OK2");
+
 		app2.setPatient(patient2);
 		app2.setInvoice(inv2);
+		app2.setDoctor(doc1);
 
 		app3.setPatient(patient3);
 		app3.setInvoice(inv3);
+		app3.setDoctor(doc1);
 
 		app4.setPatient(patient4);
 		app4.setInvoice(inv4);
+		app4.setDoctor(doc2);
 
 		app5.setPatient(patient5);
 		app5.setInvoice(inv5);
+		app5.setDoctor(doc2);
 
+		appointmentRepository.save(app1);
 		
-		if(debug) System.out.println("OK2");
-//		patient1.addAppointment(app1);
-		if(debug) System.out.println("OK3");
-		Appointment newApp = appointmentRepository.save(app1);
+		if(debug) System.out.println("OK2b");
+
 		appointmentRepository.save(app2);
 		appointmentRepository.save(app3);
 		appointmentRepository.save(app4);
 		appointmentRepository.save(app5);
-		if(debug) System.out.println("OK4");
 		
-		System.out.println(newApp.getAppointmentId());
-		if(debug) System.out.println("OK5");
-		
-		
-		
-		ArrayList<Appointment> appointments = new ArrayList<>();
-//		appointmentRepository.save(new Appointment("2023-04-10", "09:00", "Cold", new Patient("Pelletier","Thomas",Gender.Male,LocalDate.of(2006,3,6),"444-410-8052","amartinez162@spammik.com","88888 Lawrence Ave, Kelowna, BC, Canada","R3L 1T8","","","","2189")));
-//		appointmentRepository.save(new Appointment("2023-04-10", "10:00", "Fever", new Patient("Gagnon","Mia",Gender.Male,LocalDate.of(1962,6,13),"148-737-1450","helturner385@guerrillamail.biz","3333 West Broadway, Vancouver, BC, Canada","V1L 6T9","","","Ehlers-Danlos syndrome","2213")));
-//		appointmentRepository.save(new Appointment("2023-04-10", "11:00", "Flu Shot", new Patient("Bouchard","Lucy",Gender.Male,LocalDate.of(1970,1,11),"401-513-9460","anross342@maildropz.com","3187 Oakwood Avenue, Vancouver, BC, Canada","R2M 1Z1","","Anaphylaxis","","2226")));
-//		appointmentRepository.save(new Appointment("2023-04-10", "12:00", "Covid-19", new Patient("Gagne","Logan",Gender.Male,LocalDate.of(1944,6,23),"789-704-5999","ngonzalez278@trash-me.com","4821 Maple Lane, Vancouver, BC, Canada","V4T 4R4","Laminectomy","","","2249")));
-//		appointmentRepository.save(new Appointment("2023-04-11", "13:00", "Vomit", new Patient("Paul","Smith",Gender.Male,LocalDate.of(1954,7,23),"604-704-5991","paulsmith111@1234-me.com","21 market Lane, Vancouver, BC, Canada","V5T 4R6","","","","2255")));
 		appointmentRepository.findAll().forEach(System.out::println);
-		// custom - sri: end
-		
 	}
-	
 	
 	@Bean
 	ApplicationRunner init(DoctorRepository doctorRepository, PatientRepository patientRepository, AppointmentRepository appointmentRepository, InvoiceRepository invoiceRepository) {
@@ -199,6 +185,4 @@ public class DessClinicSystemApplication {
 			loadData(doctorRepository, patientRepository, appointmentRepository, invoiceRepository);
 		};
 	}
-	
-	
 }

@@ -75,18 +75,9 @@ public class Patient {
 	@Column(name="geneticDisease")
 	private String geneticDisease;
 	
-	
-	// custom: relationship
-	
 	@JsonIgnore
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Appointment> appointments = new ArrayList<>();
-//	private Set<Appointment> appointments = new HashSet<>();
-	
-	
-	// one to many and one to one
-	
-	
 	
 	public List<Appointment> getAppointments() {
 		return appointments;
@@ -99,12 +90,6 @@ public class Patient {
 	public void removeAppointment(Appointment appointment) {
 		this.appointments.remove(appointment);
 	}	
-	
-	
-	
-//	public void setAppointments(Set<Appointment> appointments) {
-//		this.appointments = appointments;
-//	}
 
 	//constructors
 	public Patient() {}
@@ -224,5 +209,4 @@ public class Patient {
 	public String getFullName() {
 		return firstName+" "+lastName;
 	}
-	
 }

@@ -1,8 +1,11 @@
 package com.example.dcs.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
@@ -35,6 +38,22 @@ public class Doctor {
 	@Column(name = "Years of Practice")
 	private int dYoP;
 
+	@JsonIgnore
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Appointment> appointments = new ArrayList<>();
+
+	public List<Appointment> getAppointments() {
+		return appointments;
+	}
+
+	public void addAppointment(Appointment appointment) {
+		this.appointments.add(appointment);
+	}
+	
+	public void removeAppointment(Appointment appointment) {
+		this.appointments.remove(appointment);
+	}	
+	
 	//constructors
 	public Doctor() {}
 
@@ -103,6 +122,4 @@ public class Doctor {
 	public void setdYoP(int dYoP) {
 		this.dYoP = dYoP;
 	}	
-	
-
 }

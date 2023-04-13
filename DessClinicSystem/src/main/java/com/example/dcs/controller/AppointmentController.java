@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dcs.model.Appointment;
 import com.example.dcs.model.AppointmentRepository;
+import com.example.dcs.model.Doctor;
+import com.example.dcs.model.DoctorRepository;
 import com.example.dcs.model.Invoice;
 import com.example.dcs.model.InvoiceRepository;
 import com.example.dcs.model.Patient;
 import com.example.dcs.model.PatientRepository;
-
-
 
 @CrossOrigin(origins = "http://localhost:8081") // used for vue
 @RestController
@@ -39,11 +39,13 @@ public class AppointmentController {
 	@Autowired
 	InvoiceRepository invoiceRepository;
 	
-	
 	// patient booking appointment
 	@Autowired
 	PatientRepository patientRepository;
 	
+	// doctor booking appointment
+	@Autowired
+	DoctorRepository doctorRepository;
 	
 	// get all appointments (need to implement with patient ID, and doctorID)
 		@GetMapping("/appointments")
@@ -67,13 +69,80 @@ public class AppointmentController {
 						HttpStatus.INTERNAL_SERVER_ERROR);
 			}
 		}
+				
+		// creating a new appointment
+		@PostMapping("/appointments/{paymentId}")
+		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt, 
+				@PathVariable Long paymentId) {
+			try {
+				if(appt.getDoctor().getdId()==0) appt.getDoctor().setdId(1);
+				
+				Optional<Invoice> invoice = invoiceRepository.findById(paymentId);
+				Optional<Doctor> doctor = doctorRepository.findById(appt.getDoctor().getdId());
+				System.out.println("doctor:"+ doctor);
+				
+				Invoice invoiceObj = invoice.get();
+				Doctor doctObj = doctor.get();
+				System.out.println("doctor obj:"+doctObj);
+						
+				System.out.println(appt);	
+				System.out.println("Patient ID: " + appt.getPatient().getId());
+				System.out.println("Doctor ID: " + appt.getDoctor().getdId());
+				
+				Patient pat = appt.getPatient();
+				if(debug) System.out.println("OK-a1");				
+				Appointment newApp = new Appointment(appt.getVisitDate(), 
+						appt.getVisitTime(), appt.getQuickNote());
+				
+				newApp.setInvoice(invoiceObj);
+				if(debug) System.out.println("OK-a2");				
 		
+				newApp.setPatient(pat);
+				if(debug) System.out.println("OK-a3");				
+				
+				newApp.setDoctor(doctObj);
+				if(debug) System.out.println("OK-a4");							
+
+				Appointment newAppt = appointmentRepository.save(newApp);
+				appointmentRepository.save(newApp);
+				
+				if(debug) System.out.println("OK-a5");				
+				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+		}
 		
-	
-		
-		
-		// runs when we see a create appointment booking page
-		// @GetMapping("/appointments/{aId}")
+		// Deleting a new appointment
+		@DeleteMapping("/appointments/{id}")
+		public ResponseEntity<HttpStatus> deleteAppointment(
+				@PathVariable("id") long id) {
+			try {
+				
+				Appointment appt;
+				Patient pat;
+				Doctor doctor;
+				
+				Optional<Appointment> apt = appointmentRepository.findById(id);
+				if(apt.isPresent()) {
+					appt = apt.get();
+					pat = appt.getPatient();
+					doctor = appt.getDoctor();
+					
+					pat.removeAppointment(appt);
+					doctor.removeAppointment(appt);
+					
+					if(debug) System.out.println(appt.getPatient().getId());
+				}
+				
+				appointmentRepository.deleteById(id);
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			} catch(Exception e) {
+				return new ResponseEntity<>(null, 
+						HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+		}
 		
 		
 		// To create a new appointment with the doctor -- -- (student - registers - course) - (patient-appointment-invoice)
@@ -88,80 +157,5 @@ public class AppointmentController {
 				e.printStackTrace();
 				return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
-		}*/
-		
-		
-		
-		// creating a new appointment
-		@PostMapping("/appointments/{paymentId}")
-		public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appt, @PathVariable Long paymentId ) {
-			try {
-				
-				
-				Optional<Invoice> invoice = invoiceRepository.findById(paymentId);
-				
-				Invoice invoiceObj = invoice.get();
-
-
-				
-				System.out.println(appt);
-				if(debug) System.out.println("OK-a0");				
-
-				
-				System.out.println("Patient ID: " + appt.getPatient().getId());
-				
-				Patient pat = appt.getPatient();
-				if(debug) System.out.println("OK-a1");				
-				Appointment newApp = new Appointment(appt.getVisitDate(), appt.getVisitTime(), appt.getQuickNote());
-				
-				newApp.setInvoice(invoiceObj);
-				
-				if(debug) System.out.println("OK-a2");				
-				
-				newApp.setPatient(pat);
-				if(debug) System.out.println("OK-a3");				
-				
-//				Optional<Patient> pt = patientRepository.findById(appt.getPatient().getId());
-//				System.out.println("OK-a4");				
-
-				Appointment newAppt = appointmentRepository.save(newApp);
-				appointmentRepository.save(newApp);
-				
-				if(debug) System.out.println("OK-a5");				
-				return new ResponseEntity<>(newAppt, HttpStatus.CREATED);
-			} catch (Exception e) {
-				e.printStackTrace();
-				return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-			}
-		}
-		
-		
-		// Deleting a new appointment
-		@DeleteMapping("/appointments/{id}")
-		public ResponseEntity<HttpStatus> deleteAppointment(
-				@PathVariable("id") long id) {
-			try {
-				
-				Appointment appt;
-				Patient pat;
-				
-				Optional<Appointment> apt = appointmentRepository.findById(id);
-				if(apt.isPresent()) {
-					appt = apt.get();
-					pat = appt.getPatient();
-					pat.removeAppointment(appt);
-					if(debug) System.out.println(appt.getPatient().getId());
-				}
-				
-				appointmentRepository.deleteById(id);
-				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-			} catch(Exception e) {
-				return new ResponseEntity<>(null, 
-						HttpStatus.INTERNAL_SERVER_ERROR);
-			}
-		}
-		
-
-	
-
+		}*/	
 }

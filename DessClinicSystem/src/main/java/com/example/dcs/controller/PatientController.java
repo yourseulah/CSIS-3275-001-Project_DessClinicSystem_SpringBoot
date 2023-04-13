@@ -33,9 +33,6 @@ public class PatientController {
 	@PostMapping("/patients")
 	public ResponseEntity<Patient> createPatient(@RequestBody Patient patient){
 		try {
-			//public Patient(String firstName, String lastName, PGender gender, String dob, 
-			//String mobile, String email, String address, String zipCode, String surgery, 
-			//String allergies, String geneticDisease){
 			Patient newPatient = new Patient(patient.getFirstName(),patient.getLastName(),
 					patient.getGender(), patient.getDob(), patient.getMobile(), patient.getEmail(),
 					patient.getAddress(), patient.getZipCode(), patient.getSurgery(),
@@ -117,8 +114,6 @@ public class PatientController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
-	//I believe there shouldn't be a delete all patients end point
 }
 
 

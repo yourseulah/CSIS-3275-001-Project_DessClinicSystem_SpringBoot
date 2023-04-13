@@ -101,7 +101,7 @@ public class DoctorController {
 		}
 	}
 	
-	//To delete a course
+	//To delete a doctor
 	@DeleteMapping("/doctors/{dId}")
 	public ResponseEntity<HttpStatus> deleteDoctor(
 			@PathVariable("dId") long dId) {
