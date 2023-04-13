@@ -76,7 +76,7 @@ public class Patient {
 	private String geneticDisease;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	private List<Appointment> appointments = new ArrayList<>();
 	
 	public List<Appointment> getAppointments() {

@@ -39,7 +39,7 @@ public class Doctor {
 	private int dYoP;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	private List<Appointment> appointments = new ArrayList<>();
 
 	public List<Appointment> getAppointments() {
