@@ -111,15 +111,15 @@ public class DessClinicSystemApplication {
 		patientRepository.findAll().forEach(System.out::println);		
 		
 //		ArrayList<Invoice> invoices = new ArrayList<>();
-		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada"));
-		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "AMEX", 40, Status.Pending, "GCG USA"));
-		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "MASTERCARD", 1000, Status.Unknown, "GCG COL"));
-		invoiceRepository.save(
-				new Invoice(LocalDate.now(), "TD", 1900, Status.Unknown, "HAPPY HEALTH"));
-		
+//		invoiceRepository.save(
+//				new Invoice(LocalDate.now(), "VISA", 120, Status.Paid, "GCG Canada"));
+//		invoiceRepository.save(
+//				new Invoice(LocalDate.now(), "AMEX", 40, Status.Pending, "GCG USA"));
+//		invoiceRepository.save(
+//				new Invoice(LocalDate.now(), "MASTERCARD", 1000, Status.Unknown, "GCG COL"));
+//		invoiceRepository.save(
+//				new Invoice(LocalDate.now(), "TD", 1900, Status.Unknown, "HAPPY HEALTH"));
+//		
 		invoiceRepository.findAll().forEach(System.out::println);
 					
 		Appointment app1 = new Appointment("2023-04-10", "09:00", "Cold");
@@ -128,11 +128,11 @@ public class DessClinicSystemApplication {
 		Appointment app4 = new Appointment("2023-04-10", "12:00", "Covid-19");
 		Appointment app5 = new Appointment("2023-04-11", "13:00", "Vomit");
 		
-		Invoice inv1 = new Invoice(LocalDate.now(), "VISA", 100, Status.Paid, "GCG Canada");
-		Invoice inv2 = new Invoice(LocalDate.now(), "VISA", 200, Status.Paid, "GCG Canada");
-		Invoice inv3 = new Invoice(LocalDate.now(), "VISA", 300, Status.Paid, "GCG Canada");
-		Invoice inv4 = new Invoice(LocalDate.now(), "VISA", 400, Status.Paid, "GCG Canada");
-		Invoice inv5 = new Invoice(LocalDate.now(), "VISA", 500, Status.Paid, "GCG Canada");
+		Invoice inv1 = new Invoice(LocalDate.now(), "VISA", 100, Status.Paid, "GCG USA");
+		Invoice inv2 = new Invoice(LocalDate.now(), "MASTERCARD", 200, Status.Paid, "GCG Canada");
+		Invoice inv3 = new Invoice(LocalDate.now(), "TD", 300, Status.Pending, "GCG Canada");
+		Invoice inv4 = new Invoice(LocalDate.now(), "MASTERCARD", 400, Status.Paid, "HAPPY HEALTH");
+		Invoice inv5 = new Invoice(LocalDate.now(), "VISA", 500, Status.Unknown, "GCG USA");
 		
 		Doctor doc1 = new Doctor(LocalDate.of(1968, 5, 19), "John", "Davis", 
 						Gender.Male, "General", 25);
