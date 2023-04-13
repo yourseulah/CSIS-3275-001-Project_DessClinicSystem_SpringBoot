@@ -37,10 +37,10 @@ public class Appointment {
 	private Patient patient;
 	
 	@Column(name = "visit_date")
-	private String visitDate;
+	private LocalDate visitDate;
 	
 	@Column(name = "visit_time")
-	private String visitTime;
+	private LocalTime visitTime;
 	
 	@Column(name = "quick_note")
 	private String quickNote;
@@ -72,7 +72,7 @@ public class Appointment {
 
 	public Appointment() {}
 
-	public Appointment(String visitDate, String visitTime, String quickNote) {
+	public Appointment(LocalDate visitDate, LocalTime visitTime, String quickNote) {
 		super();
 		this.visitDate = visitDate;
 		this.visitTime = visitTime;
@@ -81,7 +81,7 @@ public class Appointment {
 		this.amount = 0; // no charge
 	}
 
-	public Appointment(String visitDate, String visitTime, String quickNote, Patient patient)
+	public Appointment(LocalDate visitDate, LocalTime visitTime, String quickNote, Patient patient)
 	{
 		super();
 		this.visitDate = visitDate;
@@ -108,19 +108,19 @@ public class Appointment {
 		this.id = appointmentId;
 	}
 
-	public String getVisitDate() {
+	public LocalDate getVisitDate() {
 		return visitDate;
 	}
 
-	public void setVisitDate(String visitDate) {
+	public void setVisitDate(LocalDate visitDate) {
 		this.visitDate = visitDate;
 	}
 
-	public String getVisitTime() {
+	public LocalTime getVisitTime() {
 		return visitTime;
 	}
 
-	public void setVisitTime(String visitTime) {
+	public void setVisitTime(LocalTime visitTime) {
 		this.visitTime = visitTime;
 	}
 

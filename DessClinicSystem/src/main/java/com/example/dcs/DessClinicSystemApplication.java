@@ -1,6 +1,7 @@
 package com.example.dcs;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 import org.springframework.boot.ApplicationRunner;
@@ -22,7 +23,7 @@ import com.example.dcs.model.PatientRepository;
 @SpringBootApplication
 public class DessClinicSystemApplication {
 
-	boolean debug=true;
+	boolean debug=false;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DessClinicSystemApplication.class, args);
@@ -122,11 +123,11 @@ public class DessClinicSystemApplication {
 //		
 		invoiceRepository.findAll().forEach(System.out::println);
 					
-		Appointment app1 = new Appointment("2023-04-10", "09:00", "Cold");
-		Appointment app2 = new Appointment("2023-04-10", "10:00", "Fever");
-		Appointment app3 = new Appointment("2023-04-10", "11:00", "Flu Shot");
-		Appointment app4 = new Appointment("2023-04-10", "12:00", "Covid-19");
-		Appointment app5 = new Appointment("2023-04-11", "13:00", "Vomit");
+		Appointment app1 = new Appointment(LocalDate.of(2023,4,15), LocalTime.of(9, 0), "Cold");
+		Appointment app2 = new Appointment(LocalDate.of(2023,4,15), LocalTime.of(10, 0), "Fever");
+		Appointment app3 = new Appointment(LocalDate.of(2023,4,15), LocalTime.of(11, 0), "Flu Shot");
+		Appointment app4 = new Appointment(LocalDate.of(2023,4,15), LocalTime.of(12, 0), "Covid-19");
+		Appointment app5 = new Appointment(LocalDate.of(2023,4,15), LocalTime.of(13, 0), "Vomit");
 		
 		Invoice inv1 = new Invoice(LocalDate.now(), "VISA", 100, Status.Paid, "GCG USA");
 		Invoice inv2 = new Invoice(LocalDate.now(), "MASTERCARD", 200, Status.Paid, "GCG Canada");
