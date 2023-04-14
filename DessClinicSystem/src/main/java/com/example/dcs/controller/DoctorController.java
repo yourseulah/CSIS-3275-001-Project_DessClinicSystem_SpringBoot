@@ -29,17 +29,12 @@ public class DoctorController {
 	@Autowired
 	DoctorRepository doctorRepository;
 	
-	//To get all doctors, supporting search with major
+	//To get all doctors
 	@GetMapping("/doctors")
-	public ResponseEntity<List<Doctor>> getAllDoctors(
-			@RequestParam(required = false) String major){
+	public ResponseEntity<List<Doctor>> getAllDoctors(){
 		try {
 			List<Doctor> doctors = new ArrayList<Doctor>();
-			if (major == null) {
 				doctorRepository.findAll().forEach(doctors::add);
-			} else if(major != null){
-				doctorRepository.findByMajorContainingIgnoreCase(major).forEach(doctors::add);
-			}
 			
 			if(doctors.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT); //Error 204
@@ -115,16 +110,16 @@ public class DoctorController {
 	}
 	
 	//To delete all doctors' records
-	@DeleteMapping("/doctors")
-	public ResponseEntity<HttpStatus> deleteAllDoctors() {
-		try {
-			doctorRepository.deleteAll();
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		} catch(Exception e) {
-			return new ResponseEntity<>(null, 
-					HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
+//	@DeleteMapping("/doctors")
+//	public ResponseEntity<HttpStatus> deleteAllDoctors() {
+//		try {
+//			doctorRepository.deleteAll();
+//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//		} catch(Exception e) {
+//			return new ResponseEntity<>(null, 
+//					HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
+//	}
 	
 	
 }
